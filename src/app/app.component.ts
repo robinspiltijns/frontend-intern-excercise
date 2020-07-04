@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Priority } from './priority';
 import { Project } from './project';
 
-@Component({
-    selector: 'app-root',
+@Component({ // Marks class as angular component, provides metadata for processing.
+    selector: 'app-root', // Name of the html tag that inserts this component.
     templateUrl: './app.component.html',
 })
-export class AppComponent {
+export class AppComponent { // Everything in here can be used in the templateUrl, which is what gets rendered. {{ title }} f.e.
     title = 'frontend-exercise';
 
     public readonly projects: Project[] = [
