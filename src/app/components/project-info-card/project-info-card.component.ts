@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Project } from '../../project';
+import {label} from '../../priority';
 
 @Component({
   selector: 'app-project-info-card',
@@ -8,5 +9,6 @@ import { Project } from '../../project';
 })
 export class ProjectInfoCardComponent { // Maybe need an Oninit?
     @Input() project: Project;
+    getLabel = label; // Can this be cleaner?
   }
 

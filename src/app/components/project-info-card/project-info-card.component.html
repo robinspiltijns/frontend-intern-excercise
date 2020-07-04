@@ -1,3 +1,9 @@
 <mat-card>
   <mat-card-title> {{project.title}} </mat-card-title>
+  <mat-card-content>Owner: {{project.owner}}</mat-card-content>
+  <mat-card-content>Priority: {{getLabel(project.priority)}}</mat-card-content>
+  <mat-card-content>Due date: {{project.dueDate | date: 'E MMM dd yyyy'}}</mat-card-content>
+  <mat-card-content>Tasks: {{project.tasks.length}}</mat-card-content>
+
+
 </mat-card>
