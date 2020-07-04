@@ -12,6 +12,7 @@
     <div class="row">
         <div class="col-md-4 py-3" *ngFor="let project of projects; let i = index">
             <!-- TODO: replace this span with your own project component from step 1 in the instructions -->
+            <app-project-info-card></app-project-info-card>
             <span>{{ project.title }}</span>
         </div>
     </div>

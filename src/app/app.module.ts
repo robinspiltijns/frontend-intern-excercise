@@ -10,9 +10,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { ProjectInfoCardComponent } from './components/project-info-card/project-info-card.component';
 
 @NgModule({
-    declarations: [AppComponent], // All components should automatically be put here.
+    declarations: [AppComponent, ProjectInfoCardComponent], // All components should automatically be put here.
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
