@@ -105,5 +105,9 @@ export class AppComponent {
         },
     ];
 
-    private showTasks = this.projects.map((_) => false);
+  private showTasks = this.projects.map((_) => true);
+
+    onShowTasks(showTask: boolean): void {
+      this.showTasks[1] = showTask;
+    }
 }

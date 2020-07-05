@@ -8,12 +8,13 @@
   <div *ngIf="showTasks">
     <div style="text-align: center;" *ngIf="project.tasks.length === 0">
       <mat-card-content >
-        <span >No tasks</span>
+        <span>No tasks</span>
       </mat-card-content>
     </div>
       <ul>
         <li *ngFor="let task of project.tasks; let i = index">{{task.title}}</li>
       </ul>
     </div>
-  <button mat-button color="primary">SHOW TASKS</button>
+  <button *ngIf="showTasks" (click)="showTask(false)" mat-button color="primary">HIDE TASKS</button>
+  <button *ngIf="!showTasks" (click)="showTask(true)" mat-button color="primary">SHOW TASKS</button>
 </mat-card>
