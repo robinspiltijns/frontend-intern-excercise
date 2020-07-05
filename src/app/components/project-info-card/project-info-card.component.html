@@ -2,6 +2,18 @@
   <mat-card-title> {{project.title}} </mat-card-title>
   <mat-card-content><span class="mat-body-strong">Owner:</span> {{project.owner}}</mat-card-content>
   <mat-card-content><span class="mat-body-strong">Priority:</span>: {{getLabel(project.priority)}}</mat-card-content>
-  <mat-card-content><span class="mat-body-strong">Due date:</span> {{project.dueDate | date: 'E MMM dd yyyy'}}</mat-card-content>
+  <mat-card-content><span class="mat-body-strong">Due date:</span> {{project.dueDate | date: 'E MMM dd yyyy'}}
+  </mat-card-content>
   <mat-card-content><span class="mat-body-strong">Tasks:</span> {{project.tasks.length}}</mat-card-content>
+  <div *ngIf="showTasks">
+    <div style="text-align: center;" *ngIf="project.tasks.length === 0">
+      <mat-card-content >
+        <span >No tasks</span>
+      </mat-card-content>
+    </div>
+      <ul>
+        <li *ngFor="let task of project.tasks; let i = index">{{task.title}}</li>
+      </ul>
+    </div>
+  <button mat-button color="primary">SHOW TASKS</button>
 </mat-card>

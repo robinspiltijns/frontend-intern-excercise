@@ -8,7 +8,9 @@ import {label} from '../../priority';
   styleUrls: ['./project-info-card.component.css']
 })
 export class ProjectInfoCardComponent { // Maybe need an Oninit?
-    @Input() project: Project;
     getLabel = label; // Can this be cleaner?
+
+    @Input() project: Project;
+    @Input() showTasks: boolean;
   }
 
