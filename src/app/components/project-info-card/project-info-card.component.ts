@@ -11,7 +11,7 @@ export class ProjectInfoCardComponent { // Maybe need an Oninit?
   @Input() showTasks: boolean;
   @Output() showTasksChange = new EventEmitter<boolean>();
 
-  getLabel = label; // Can this be cleaner?
+  public getLabel = label; // Can this be cleaner?
   showTask(show: boolean): void {
     this.showTasksChange.emit(show);
     console.log('emitted ' + show);
