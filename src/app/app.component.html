@@ -6,13 +6,19 @@
     <h1 class="mt-3">Projects</h1>
     <div class="row">
         <div class="col">
-            <!-- TODO: replace this span with a mat-select from step 3 in the instructions -->
-            <span>Show tasks dropdown</span>
+          <mat-form-field appearance="fill">
+            <mat-label>Show tasks</mat-label>
+            <mat-select>
+             <mat-option>Show All</mat-option>
+              <mat-option>Hide All</mat-option>
+              <mat-option>Separate</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4 py-3" *ngFor="let project of projects; let i = index">
-            <app-project-info-card [project]="project"></app-project-info-card>
+            <app-project-info-card (showTasksChange)="onShowTasks($event, i)" [showTasks]="showTasks[i]" [project]="project"></app-project-info-card>
         </div>
     </div>
 </div>
