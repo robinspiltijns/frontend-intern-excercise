@@ -105,7 +105,7 @@ export class AppComponent {
         },
     ];
 
-  private showTasks = this.projects.map((_) => false);
+    public showTasks = this.projects.map((_) => false);
 
     onShowTasks(showTask: boolean, index: number): void { // Is it OK to take a second argument?
       this.showTasks[index] = showTask;
