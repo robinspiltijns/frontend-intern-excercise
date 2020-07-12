@@ -14,7 +14,6 @@ export class ProjectInfoCardComponent { // Maybe need an Oninit?
   public getLabel = label; // Can this be cleaner?
   showTask(show: boolean): void {
     this.showTasksChange.emit(show);
-    console.log('emitted ' + show);
   }
 }
 

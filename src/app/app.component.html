@@ -18,7 +18,7 @@
     </div>
     <div class="row">
         <div class="col-md-4 py-3" *ngFor="let project of projects; let i = index">
-            <app-project-info-card (showTasksChange)="onShowTasks($event)" [showTasks]="showTasks[i]" [project]="project"></app-project-info-card>
+            <app-project-info-card (showTasksChange)="onShowTasks($event, i)" [showTasks]="showTasks[i]" [project]="project"></app-project-info-card>
         </div>
     </div>
 </div>
