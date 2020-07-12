@@ -107,7 +107,23 @@ export class AppComponent {
 
     public showTasks = this.projects.map((_) => false);
 
+    selected: string;
+
     onShowTasks(showTask: boolean, index: number): void { // Is it OK to take a second argument?
       this.showTasks[index] = showTask;
+      this.selected = 'separate';
+    }
+
+    onSelect(option: string): void {
+      switch (option) {
+        case 'hide_all': {
+          this.showTasks = this.projects.map((_) => false);
+          break;
+        }
+        case 'show_all': {
+          this.showTasks = this.projects.map((_) => true);
+          break;
+        }
+      }
     }
 }
