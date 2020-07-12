@@ -108,16 +108,16 @@ export class AppComponent {
 
     public showTasks = this.projects.map((_) => false);
 
-    selected;
+    public selected;
 
-    options = Option;
+    public readonly options = Option;
 
-    onShowTasks(showTask: boolean, index: number): void { // Is it OK to take a second argument?
+    public onShowTasks(showTask: boolean, index: number): void {
       this.showTasks[index] = showTask;
       this.selected = this.options.separate;
     }
 
-    onSelect(option): void {
+    public onSelect(option): void {
       switch (option) {
         case this.options.hideAll: {
           this.showTasks = this.projects.map((_) => false);
