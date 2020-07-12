@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Option} from './option';
 import { Priority } from './priority';
 import { Project } from './project';
 
@@ -107,20 +108,22 @@ export class AppComponent {
 
     public showTasks = this.projects.map((_) => false);
 
-    selected: string;
+    public selected;
 
-    onShowTasks(showTask: boolean, index: number): void { // Is it OK to take a second argument?
+    public readonly options = Option;
+
+    public onShowTasks(showTask: boolean, index: number): void {
       this.showTasks[index] = showTask;
-      this.selected = 'separate';
+      this.selected = this.options.separate;
     }
 
-    onSelect(option: string): void {
+    public onSelect(option): void {
       switch (option) {
-        case 'hide_all': {
+        case this.options.hideAll: {
           this.showTasks = this.projects.map((_) => false);
           break;
         }
-        case 'show_all': {
+        case this.options.showAll: {
           this.showTasks = this.projects.map((_) => true);
           break;
         }
