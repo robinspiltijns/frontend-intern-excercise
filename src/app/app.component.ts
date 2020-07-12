@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Option} from './option';
 import { Priority } from './priority';
 import { Project } from './project';
 
@@ -105,5 +106,27 @@ export class AppComponent {
         },
     ];
 
-    private showTasks = this.projects.map((_) => false);
+    public showTasks = this.projects.map((_) => false);
+
+    public selected;
+
+    public readonly options = Option;
+
+    public onShowTasks(showTask: boolean, index: number): void {
+      this.showTasks[index] = showTask;
+      this.selected = this.options.separate;
+    }
+
+    public onSelect(option): void {
+      switch (option) {
+        case this.options.hideAll: {
+          this.showTasks = this.projects.map((_) => false);
+          break;
+        }
+        case this.options.showAll: {
+          this.showTasks = this.projects.map((_) => true);
+          break;
+        }
+      }
+    }
 }
