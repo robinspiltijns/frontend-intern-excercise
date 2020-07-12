@@ -8,10 +8,10 @@
         <div class="col">
           <mat-form-field appearance="fill">
             <mat-label>Show tasks</mat-label>
-            <mat-select>
-             <mat-option>Show All</mat-option>
-              <mat-option>Hide All</mat-option>
-              <mat-option>Separate</mat-option>
+            <mat-select [(value)]="selected" (selectionChange)="onSelect($event.value)">
+             <mat-option value="show_all">Show All</mat-option>
+              <mat-option value="hide_all">Hide All</mat-option>
+              <mat-option value="separate">Separate</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
